@@ -1,4 +1,7 @@
+# Getting Started
+
 - To add your Huggingface token run: `cp .env.example .env` and add your Huggingface token to the newly created `.env` file.
+- Use `requirements.txt` to install the required dependencies.
 - To save the modelsrun:`python save_model.py`
 - The location for the input documents can be modified in `constants/data.py`.
 - The location for the input question-and-answers can be mofidied in `main-baseline.py` and `main-time-baseline.py`.
