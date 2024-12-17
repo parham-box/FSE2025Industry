@@ -13,8 +13,8 @@ metrics = ["arel_res_public.csv", "cp_res_public.csv", "crec_res_public.csv",
 
 # Dictionary to store results
 results = {"QAMR": {}, "Baseline": {}}
-c1 = "#d6fdd0"
-c2 = "#ceeefa"
+c1 = "#5d57d9"
+c2 = "#bd3376"
 
 for subdir in subdirs:
     subdir_path = os.path.join(base_dir, subdir)
@@ -71,11 +71,11 @@ def define_box_properties(plot_name, color_code):
 # Metric names and corresponding keys
 metric_names = [
     "Faithfulness",
-    "Answer Relevancy",
-    "Contextual Relevancy",
-    "Contextual Recall",
-    "Contextual Precision",
-    "Answer Correctness",
+    "Answer\nRelevancy",
+    "Contextual\nRelevancy",
+    "Contextual\nRecall",
+    "Contextual\nPrecision",
+    "Answer\nCorrectness",
 ]
 
 metric_files = [
@@ -132,12 +132,12 @@ for pos in separator_positions:
 spacing = 1.5
 
 for i, ((our_values, basic_values), (mean_our, mean_basic), metric_name) in enumerate(zip(data, means, metric_names)):
-    meanprops = dict(marker='^', markerfacecolor='green', markeredgecolor='none', markersize=12)
+    meanprops = dict(marker='^', markerfacecolor='#02bf21', markeredgecolor='none', markersize=12)  # Enlarged triangle
     medianprops = dict(color='orange', linewidth=2.5)
 
     bp_our = ax.boxplot(
         our_values,
-        positions=[positions[i] - width - 0.5],
+        positions=[positions[i] + width + 0.5],
         widths=width,
         showmeans=True,
         vert=False,
@@ -149,12 +149,12 @@ for i, ((our_values, basic_values), (mean_our, mean_basic), metric_name) in enum
     )
     define_box_properties(bp_our, c1)
     if mean_our is not None:
-        ax.annotate(f"{mean_our:.2f}", xy=(mean_our - 0.005, positions[i] - width + 0.45- 0.5), 
+        ax.annotate(f"{mean_our:.2f}", xy=(mean_our - 0.005, positions[i] + width + 0.45+ 0.5), 
                     fontsize=20, color="#000", fontweight='bold')
 
     bp_basic = ax.boxplot(
         basic_values,
-        positions=[positions[i] + width + 0.5],
+        positions=[positions[i] - width - 0.5],
         widths=width,
         showmeans=True,
         vert=False,
@@ -166,7 +166,7 @@ for i, ((our_values, basic_values), (mean_our, mean_basic), metric_name) in enum
     )
     define_box_properties(bp_basic, c2)
     if mean_basic is not None:
-        ax.annotate(f"{mean_basic:.2f}", xy=(mean_basic - 0.005, positions[i] + width + 0.45+ 0.5), 
+        ax.annotate(f"{mean_basic:.2f}", xy=(mean_basic - 0.005, positions[i] - width + 0.45- 0.5), 
                     fontsize=20, color="#000", fontweight='bold')
 
 ax.set_yticks(positions)
