@@ -6,15 +6,16 @@ We propose QAMR, a novel RAG-based question answering chatbot for technical docu
 
 ## Getting Started
 
-
 * **Code for the QAMR:** Located in the `Code-QAMR` directory, running `main.py` generates responses for all questions listed in the provided `.xlsx` file. The `main-time.py` script not only produces these responses but also generates a file detailing the time each specific component of the chatbot takes to respond to each question. After all questions have been addressed, the `main-evaluation.py` script utilizes the generated response file to execute the evaluation pipeline, computing all relevant metrics for the generated responses.
-
 * **Code for the Baseline:** Found in the `Code-Baseline` directory, the `main-baseline.py` script functions similarly to the QAMR's `main.py`, generating responses for the questions provided in the `.xlsx` file using the Baseline approach. Additionally, `main-time-baseline.py` generates an output file that records the time each component takes to answer each question from the Baseline. Finally, akin to QAMR, running `main-evaluation.py` with the generated response file initiates the evaluation process.
-
-* **Results of the Experiments for Research Question 1 (RQ1):** Stored in the `RQ1` directory, this section includes comprehensive results, embeddings, and evaluation metrics for `Contextual Precision (cp)`, `Contextual Recall (crec)`, `Contextual Relevancy (crel)`, `Answer Relevancy (arel)`, `Faithfulness (f)`, and `Answer Correctness (ac)`. These metrics cover all ten runs across both datasets using both QAMR and Baseline methods. Please note that the results for the Ciena dataset have been redacted to maintain confidentiality. To visualize the data and perform statistical tests, run the `main.py` file located within each dataset's subdirectory.
-
+* **Results of the Experiments for Research Question 1 (RQ1):** Stored in the `RQ1` directory, this section includes comprehensive results, embeddings, and evaluation metrics for `Contextual Precision (cp)`, `Contextual Recall (crec)`, `Contextual Relevancy (crel)`, `Answer Relevancy (arel)`, `Answer Faithfulness (f)`, and `Answer Correctness (ac)`. These metrics cover all ten runs across both datasets using both QAMR and Baseline methods. Please note that the evaluation results for the Ciena dataset only includes the evaluation metrics. All the other information and the  `reason` and `error` columns from the evaluation metrics have been redacted to maintain confidentiality.
+  To visualize the data and perform statistical tests, run the `main.py` file located within each dataset's subdirectory.
 * **Results of the Experiments for Research Question 2 (RQ2):** Located in the `RQ2` directory, this section contains the final generated responses and the time taken to produce each answer. It includes runtime data for five runs across two datasets, utilizing both QAMR and the Baseline approaches.
-
-* **Prompts:** All prompts used in QAMR are compiled in the `prompts.pdf` file. This document encompasses prompts for `Query Rewriting`, `Context Reduction`, `Context Selection`, and `Answer Generation`. Additionally, it includes the prompts employed in the `Answer Correctness` metric for evaluation purposes.
-
+  Please note that only the time taken for each question is available for Ciena documents and all other information is redacted to maintain confidentiality.
+* **Prompts:** All prompts used in QAMR are compiled in the `prompts.pdf` file. This document encompasses prompts for `Query Rewriting`, `Context Reduction`, `Context Selection`, and `Answer Generation`. In addition, it includes the prompts employed in the `Answer Correctness` metric for evaluation purposes.
 * **REQuestA Dataset:** The `REQuestA_Dataset` directory contains PDF files for the REQuestA dataset, along with a dataset comprising 159 question-and-answer pairs used to test the chatbot.
+
+**Results of the Experiments for Research Question 1 (RQ1):**
+The `RQ1` directory contains detailed results, including embeddings and evaluation metrics for the following: `Contextual Precision (cp)`, `Contextual Recall (crec)`, `Contextual Relevancy (crel)`, `Answer Relevancy (arel)`, `Faithfulness (f)`, and `Answer Correctness (ac)`. These metrics encompass all ten runs across both datasets, utilizing both the QAMR and Baseline methods.
+
+Please note that the evaluation results for the Ciena dataset include only the evaluation metrics. Additional details, as well as the `reason` and `error` columns from the evaluation metrics, have been redacted to ensure confidentiality. To visualize the data and perform statistical tests, execute the `main.py` file located within each dataset's respective subdirectory.
