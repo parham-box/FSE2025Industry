@@ -70,20 +70,20 @@ def define_box_properties(plot_name, color_code):
 
 # Metric names and corresponding keys
 metric_names = [
-    "Faithfulness",
-    "Answer\nRelevancy",
     "Contextual\nRelevancy",
     "Contextual\nRecall",
     "Contextual\nPrecision",
+    "Answer\nFaithfulness",
+    "Answer\nRelevancy",
     "Answer\nCorrectness",
 ]
 
 metric_files = [
-    "f_res_public.csv",
-    "arel_res_public.csv",
     "crel_res_public.csv",
     "crec_res_public.csv",
     "cp_res_public.csv",
+    "f_res_public.csv",
+    "arel_res_public.csv",
     "ac_res_public.csv",
 ]
 

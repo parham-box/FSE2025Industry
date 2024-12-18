@@ -72,19 +72,19 @@ def define_box_properties(plot_name, color_code):
             box.set_path_effects([])  # No additional path effects for clean borders
 
 metric_names = [
-    "Faithfulness",
-    "Answer\nRelevancy",
     "Contextual\nRelevancy",
     "Contextual\nRecall",
     "Contextual\nPrecision",
+    "Answer\nFaithfulness",
+    "Answer\nRelevancy",
     "Answer\nCorrectness",
 ]
 metric_files = [
-    "f_res_ciena.csv",
-    "arel_res_ciena.csv",
     "crel_res_ciena.csv",
     "crec_res_ciena.csv",
     "cp_res_ciena.csv",
+    "f_res_ciena.csv",
+    "arel_res_ciena.csv",
     "ac_res_ciena.csv",
 ]
 
